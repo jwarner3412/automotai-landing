@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>automotAI — AI-Powered Auto Shop Management</title>
+  <meta name="description" content="Automate your auto repair shop with AI-powered call handling, smart scheduling, and instant estimates.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-950 text-white">
+
+  <!-- Nav -->
+  <nav class="border-b border-gray-800">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <span class="text-2xl font-bold">automot<span class="text-emerald-400">AI</span></span>
+      <a href="https://app.automotai.com" class="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-gray-950 hover:bg-emerald-400 transition-colors">
+        Get Started
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="mx-auto max-w-4xl px-6 py-24 text-center">
+    <h1 class="text-5xl font-bold tracking-tight sm:text-6xl">
+      Your auto shop,<br>
+      <span class="text-emerald-400">powered by AI</span>
+    </h1>
+    <p class="mt-6 text-xl text-gray-400">
+      AutomotAI handles your calls, schedules appointments, and creates
+      estimates — so you can focus on the work that matters.
+    </p>
+
+    <!-- Waitlist Form -->
+    <form id="waitlist-form" class="mx-auto mt-10 max-w-md">
+      <div class="flex gap-2">
+        <input
+          type="email"
+          required
+          id="email"
+          placeholder="Enter your email"
+          class="flex-1 rounded-lg border border-gray-700 bg-gray-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        >
+        <button
+          type="submit"
+          id="submit-btn"
+          class="rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-gray-950 hover:bg-emerald-400 transition-colors"
+        >
+          Join Waitlist
+        </button>
+      </div>
+      <p id="form-message" class="mt-3 text-sm hidden"></p>
+    </form>
+
+    <p class="mt-4 text-sm text-gray-500">Early access coming soon. No spam, ever.</p>
+  </section>
+
+  <!-- Features -->
+  <section class="border-t border-gray-800 bg-gray-900/50">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <h2 class="text-center text-3xl font-bold">Built for auto repair shops</h2>
+      <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
+          <h3 class="text-lg font-semibold">AI Phone Receptionist</h3>
+          <p class="mt-2 text-sm text-gray-400">Never miss a call. AutomotAI answers, schedules, and quotes — 24/7.</p>
+        </div>
+        <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
+          <h3 class="text-lg font-semibold">Instant Estimates</h3>
+          <p class="mt-2 text-sm text-gray-400">Voice-to-estimate in seconds. Techs narrate findings, AI builds the quote.</p>
+        </div>
+        <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
+          <h3 class="text-lg font-semibold">Smart Scheduling</h3>
+          <p class="mt-2 text-sm text-gray-400">Appointments, bay management, and auto-confirmations built in.</p>
+        </div>
+        <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
+          <h3 class="text-lg font-semibold">Customer Communication</h3>
+          <p class="mt-2 text-sm text-gray-400">Repair updates, estimate reminders, and follow-ups — all automated.</p>
+        </div>
+        <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
+          <h3 class="text-lg font-semibold">Real-Time Dashboard</h3>
+          <p class="mt-2 text-sm text-gray-400">Revenue, calls, appointments, and conversion rates at a glance.</p>
+        </div>
+        <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
+          <h3 class="text-lg font-semibold">Multi-User Teams</h3>
+          <p class="mt-2 text-sm text-gray-400">Owner, manager, and tech roles. Everyone sees what they need.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800">
+    <div class="mx-auto max-w-6xl px-6 py-8 text-center text-sm text-gray-500">
+      &copy; 2026 automotAI. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // TODO: Replace with actual Supabase anon key + table name when ready
+    const SUPABASE_URL = "https://hglbhncsdchfevxdbcoa.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhnbGJobmNzZGNoZmV2eGRiY29hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2NTI2MzAsImV4cCI6MjA5MDIyODYzMH0.7ooJS9eubiL0IrRtZDBjs3Mj8bT4jWzEoLKJbPaRgVA";
+
+    document.getElementById("waitlist-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const btn = document.getElementById("submit-btn");
+      const msg = document.getElementById("form-message");
+
+      btn.disabled = true;
+      btn.textContent = "Joining...";
+
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": SUPABASE_ANON_KEY,
+            "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+            "Prefer": "return=minimal",
+          },
+          body: JSON.stringify({ email: email.toLowerCase().trim() }),
+        });
+
+        if (res.ok || res.status === 201) {
+          msg.textContent = "You're on the list! We'll be in touch.";
+          msg.className = "mt-3 text-sm text-emerald-400";
+          document.getElementById("email").value = "";
+        } else if (res.status === 409) {
+          msg.textContent = "You're already on the list!";
+          msg.className = "mt-3 text-sm text-emerald-400";
+        } else {
+          msg.textContent = "Couldn't join — try again later.";
+          msg.className = "mt-3 text-sm text-red-400";
+        }
+      } catch {
+        msg.textContent = "Network error. Please try again.";
+        msg.className = "mt-3 text-sm text-red-400";
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Join Waitlist";
+        msg.classList.remove("hidden");
+      }
+    });
+  </script>
+
+</body>
+</html>
