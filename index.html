@@ -3,148 +3,286 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>automotAI — AI-Powered Auto Shop Management</title>
-  <meta name="description" content="Automate your auto repair shop with AI-powered call handling, smart scheduling, and instant estimates.">
+  <title>automotAI — Your Auto Shop's Newest Employee</title>
+  <meta name="description" content="Not another AI wrapper. A virtual front desk that answers calls, builds estimates, and runs your shop — 24/7.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
+    .glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .glow-top { top: -200px; left: 50%; transform: translateX(-50%); }
+    .glow-mid { top: 600px; right: -200px; }
   </style>
 </head>
-<body class="min-h-screen bg-gray-950 text-white">
+<body class="min-h-screen bg-gray-950 text-white relative overflow-x-hidden">
+
+  <!-- Subtle glows -->
+  <div class="glow glow-top"></div>
+  <div class="glow glow-mid"></div>
 
   <!-- Nav -->
-  <nav class="border-b border-gray-800">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-      <span class="text-2xl font-bold">automot<span class="text-emerald-400">AI</span></span>
-      <a href="https://app.automotai.com" class="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-gray-950 hover:bg-emerald-400 transition-colors">
-        Get Started
+  <nav class="relative z-10 border-b border-gray-800/60">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <span class="text-2xl font-bold tracking-tight">automot<span class="text-emerald-400">AI</span></span>
+      <a href="https://app.automotai.com" class="hidden sm:inline-block rounded-lg border border-emerald-400/30 px-4 py-2 text-sm font-medium text-emerald-400 hover:bg-emerald-400/10 transition-colors">
+        Sign In &rarr;
       </a>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="mx-auto max-w-4xl px-6 py-24 text-center">
-    <h1 class="text-5xl font-bold tracking-tight sm:text-6xl">
-      Your auto shop,<br>
-      <span class="text-emerald-400">powered by AI</span>
+  <section class="relative z-10 mx-auto max-w-4xl px-6 pt-28 pb-20 text-center">
+    <div class="inline-block rounded-full border border-emerald-400/20 bg-emerald-400/5 px-4 py-1.5 text-sm text-emerald-400 mb-6 font-medium">
+      Built for auto repair shops
+    </div>
+    <h1 class="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
+      Hire your next<br>
+      <span class="text-emerald-400">best employee</span>
     </h1>
-    <p class="mt-6 text-xl text-gray-400">
-      AutomotAI handles your calls, schedules appointments, and creates
-      estimates — so you can focus on the work that matters.
+    <p class="mx-auto mt-8 max-w-2xl text-xl text-gray-400 leading-relaxed">
+      Not another AI wrapper bolted onto your workflow. A full-time virtual employee that 
+      answers calls, schedules jobs, builds estimates, and pings your team when customers need answers.
+    </p>
+    <p class="mt-3 text-lg text-emerald-400/80 font-medium">
+      Works 24/7. Never calls in sick. Never misses a call.
     </p>
 
     <!-- Waitlist Form -->
-    <form id="waitlist-form" class="mx-auto mt-10 max-w-md">
+    <form id="waitlist-form" class="mx-auto mt-12 max-w-md">
       <div class="flex gap-2">
         <input
           type="email"
           required
           id="email"
-          placeholder="Enter your email"
-          class="flex-1 rounded-lg border border-gray-700 bg-gray-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          placeholder="Enter your email to get early access"
+          class="flex-1 rounded-lg border border-gray-700 bg-gray-900 px-4 py-3 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-shadow"
         >
         <button
           type="submit"
           id="submit-btn"
-          class="rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-gray-950 hover:bg-emerald-400 transition-colors"
+          class="rounded-lg bg-emerald-500 px-6 py-3 text-sm font-bold text-gray-950 hover:bg-emerald-400 transition-all hover:shadow-lg hover:shadow-emerald-500/20"
         >
           Join Waitlist
         </button>
       </div>
       <p id="form-message" class="mt-3 text-sm hidden"></p>
     </form>
-
-    <p class="mt-4 text-sm text-gray-500">Early access coming soon. No spam, ever.</p>
+    <p class="mt-4 text-sm text-gray-600">No spam. Unsubscribe anytime.</p>
   </section>
 
-  <!-- Features -->
-  <section class="border-t border-gray-800 bg-gray-900/50">
-    <div class="mx-auto max-w-6xl px-6 py-20">
-      <h2 class="text-center text-3xl font-bold">Built for auto repair shops</h2>
-      <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
-          <h3 class="text-lg font-semibold">AI Phone Receptionist</h3>
-          <p class="mt-2 text-sm text-gray-400">Never miss a call. AutomotAI answers, schedules, and quotes — 24/7.</p>
+  <!-- Why automotAI (differentiator) -->
+  <section class="relative z-10 border-t border-gray-800/60 bg-gray-900/30">
+    <div class="mx-auto max-w-6xl px-6 py-24">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl font-bold sm:text-4xl">Why not just use ChatGPT?</h2>
+        <p class="mt-4 text-lg text-gray-400">
+          Because ChatGPT doesn't answer your phone. Other AI tools bolt onto your existing shop software 
+          and wait for you to type something in. automotAI <strong class="text-white">is</strong> your front desk — it answers calls, 
+          talks to your customers, schedules jobs, and relays questions to your mechanics in real time. 
+          You focus on the bays. We handle the rest.
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-6 sm:grid-cols-2">
+        <div class="rounded-xl border border-red-900/30 bg-red-950/10 p-6">
+          <h3 class="text-lg font-semibold text-red-400">Other AI tools</h3>
+          <ul class="mt-3 space-y-2 text-sm text-gray-400">
+            <li class="flex gap-2"><span class="text-red-400">&times;</span> Wait for you to type in data</li>
+            <li class="flex gap-2"><span class="text-red-400">&times;</span> Bolt onto existing software</li>
+            <li class="flex gap-2"><span class="text-red-400">&times;</span> Can't answer phone calls</li>
+            <li class="flex gap-2"><span class="text-red-400">&times;</span> No connection to your shop data</li>
+            <li class="flex gap-2"><span class="text-red-400">&times;</span> Just another dashboard to check</li>
+          </ul>
         </div>
-        <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
-          <h3 class="text-lg font-semibold">Instant Estimates</h3>
-          <p class="mt-2 text-sm text-gray-400">Voice-to-estimate in seconds. Techs narrate findings, AI builds the quote.</p>
-        </div>
-        <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
-          <h3 class="text-lg font-semibold">Smart Scheduling</h3>
-          <p class="mt-2 text-sm text-gray-400">Appointments, bay management, and auto-confirmations built in.</p>
-        </div>
-        <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
-          <h3 class="text-lg font-semibold">Customer Communication</h3>
-          <p class="mt-2 text-sm text-gray-400">Repair updates, estimate reminders, and follow-ups — all automated.</p>
-        </div>
-        <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
-          <h3 class="text-lg font-semibold">Real-Time Dashboard</h3>
-          <p class="mt-2 text-sm text-gray-400">Revenue, calls, appointments, and conversion rates at a glance.</p>
-        </div>
-        <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
-          <h3 class="text-lg font-semibold">Multi-User Teams</h3>
-          <p class="mt-2 text-sm text-gray-400">Owner, manager, and tech roles. Everyone sees what they need.</p>
+        <div class="rounded-xl border border-emerald-900/30 bg-emerald-950/10 p-6">
+          <h3 class="text-lg font-semibold text-emerald-400">automotAI</h3>
+          <ul class="mt-3 space-y-2 text-sm text-gray-400">
+            <li class="flex gap-2"><span class="text-emerald-400">&#10003;</span> Answers calls proactively</li>
+            <li class="flex gap-2"><span class="text-emerald-400">&#10003;</span> Is your front desk — not a plugin</li>
+            <li class="flex gap-2"><span class="text-emerald-400">&#10003;</span> Pings your team when customers need answers</li>
+            <li class="flex gap-2"><span class="text-emerald-400">&#10003;</span> Knows your customers, vehicles, and history</li>
+            <li class="flex gap-2"><span class="text-emerald-400">&#10003;</span> Works alone or with your existing tools</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- How It Works -->
+  <section class="relative z-10 border-t border-gray-800/60">
+    <div class="mx-auto max-w-6xl px-6 py-24">
+      <h2 class="text-center text-3xl font-bold sm:text-4xl">How it works</h2>
+      <p class="mx-auto mt-4 max-w-xl text-center text-gray-400">
+        Up and running in a day. No IT team required.
+      </p>
+      <div class="mt-16 grid gap-10 sm:grid-cols-3">
+        <div class="text-center">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/10 text-2xl font-bold text-emerald-400">1</div>
+          <h3 class="mt-5 text-lg font-semibold">Point your number</h3>
+          <p class="mt-2 text-sm text-gray-400">Forward your shop's existing number to automotAI. No new hardware, no new phones.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/10 text-2xl font-bold text-emerald-400">2</div>
+          <h3 class="mt-5 text-lg font-semibold">It learns your shop</h3>
+          <p class="mt-2 text-sm text-gray-400">Services, pricing, bay availability, staff. The agent knows your operation like a real employee would.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/10 text-2xl font-bold text-emerald-400">3</div>
+          <h3 class="mt-5 text-lg font-semibold">Starts working</h3>
+          <p class="mt-2 text-sm text-gray-400">Day one: answering calls, scheduling jobs, building estimates. You just focus on the work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="relative z-10 border-t border-gray-800/60 bg-gray-900/30">
+    <div class="mx-auto max-w-6xl px-6 py-24">
+      <h2 class="text-center text-3xl font-bold sm:text-4xl">Everything your front desk handles</h2>
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6 transition-colors hover:border-emerald-900/40">
+          <div class="text-2xl mb-3">📞</div>
+          <h3 class="text-lg font-semibold">AI Phone Receptionist</h3>
+          <p class="mt-2 text-sm text-gray-400">Answers every call, 24/7. Schedules, quotes, and handles after-hours. Customers can't tell it's not a person.</p>
+        </div>
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6 transition-colors hover:border-emerald-900/40">
+          <div class="text-2xl mb-3">📝</div>
+          <h3 class="text-lg font-semibold">Instant Estimates</h3>
+          <p class="mt-2 text-sm text-gray-400">Techs narrate findings, the agent builds the quote. Voice-to-estimate in seconds, convert to invoice with one click.</p>
+        </div>
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6 transition-colors hover:border-emerald-900/40">
+          <div class="text-2xl mb-3">📅</div>
+          <h3 class="text-lg font-semibold">Smart Scheduling</h3>
+          <p class="mt-2 text-sm text-gray-400">Bay-aware appointment management with auto-confirmations and conflict detection. Knows your capacity in real time.</p>
+        </div>
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6 transition-colors hover:border-emerald-900/40">
+          <div class="text-2xl mb-3">🔔</div>
+          <h3 class="text-lg font-semibold">Proactive Notifications</h3>
+          <p class="mt-2 text-sm text-gray-400">Customer calls with a question? The agent pings your mechanic and relays the answer in real time. No phone tag.</p>
+        </div>
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6 transition-colors hover:border-emerald-900/40">
+          <div class="text-2xl mb-3">📊</div>
+          <h3 class="text-lg font-semibold">Real-Time Dashboard</h3>
+          <p class="mt-2 text-sm text-gray-400">Revenue, call volume, conversion rates, active jobs. Know your numbers without opening a spreadsheet.</p>
+        </div>
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6 transition-colors hover:border-emerald-900/40">
+          <div class="text-2xl mb-3">👥</div>
+          <h3 class="text-lg font-semibold">Multi-User Teams</h3>
+          <p class="mt-2 text-sm text-gray-400">Owner, manager, and tech roles. Everyone sees what they need — nothing more.</p>
+        </div>
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6 transition-colors hover:border-emerald-900/40">
+          <div class="text-2xl mb-3">🧾</div>
+          <h3 class="text-lg font-semibold">Shop Management & Invoicing</h3>
+          <p class="mt-2 text-sm text-gray-400">Built-in invoicing, parts tracking, and bay management — or bring your own. Works standalone or alongside your existing systems.</p>
+        </div>
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6 transition-colors hover:border-emerald-900/40">
+          <div class="text-2xl mb-3">🌐</div>
+          <h3 class="text-lg font-semibold">Customer Portal</h3>
+          <p class="mt-2 text-sm text-gray-400">Your customers get their own portal — view bills, pay invoices, chat with the AI agent. Each shop gets shopname.automotai.com.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="relative z-10 border-t border-gray-800/60">
+    <div class="mx-auto max-w-3xl px-6 py-24 text-center">
+      <h2 class="text-3xl font-bold sm:text-4xl">Stop missing calls. Start growing.</h2>
+      <p class="mt-4 text-lg text-gray-400">
+        Every missed call is a customer driving to the shop down the street. automotAI picks up every time.
+      </p>
+      <form id="waitlist-form-2" class="mx-auto mt-10 max-w-md">
+        <div class="flex gap-2">
+          <input
+            type="email"
+            required
+            id="email-2"
+            placeholder="Your email"
+            class="flex-1 rounded-lg border border-gray-700 bg-gray-900 px-4 py-3 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          >
+          <button
+            type="submit"
+            id="submit-btn-2"
+            class="rounded-lg bg-emerald-500 px-6 py-3 text-sm font-bold text-gray-950 hover:bg-emerald-400 transition-all hover:shadow-lg hover:shadow-emerald-500/20"
+          >
+            Get Early Access
+          </button>
+        </div>
+        <p id="form-message-2" class="mt-3 text-sm hidden"></p>
+      </form>
+    </div>
+  </section>
+
   <!-- Footer -->
-  <footer class="border-t border-gray-800">
-    <div class="mx-auto max-w-6xl px-6 py-8 text-center text-sm text-gray-500">
-      &copy; 2026 automotAI. All rights reserved.
+  <footer class="relative z-10 border-t border-gray-800/60">
+    <div class="mx-auto max-w-6xl px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <span class="text-sm text-gray-500">&copy; 2026 automotAI. All rights reserved.</span>
+      <div class="flex gap-6 text-sm text-gray-500">
+        <a href="https://app.automotai.com" class="hover:text-gray-300 transition-colors">Dashboard</a>
+        <a href="mailto:hello@automotai.com" class="hover:text-gray-300 transition-colors">Contact</a>
+      </div>
     </div>
   </footer>
 
   <script>
-    // TODO: Replace with actual Supabase anon key + table name when ready
     const SUPABASE_URL = "https://hglbhncsdchfevxdbcoa.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhnbGJobmNzZGNoZmV2eGRiY29hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2NTI2MzAsImV4cCI6MjA5MDIyODYzMH0.7ooJS9eubiL0IrRtZDBjs3Mj8bT4jWzEoLKJbPaRgVA";
 
-    document.getElementById("waitlist-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const email = document.getElementById("email").value;
-      const btn = document.getElementById("submit-btn");
-      const msg = document.getElementById("form-message");
+    function setupForm(formId, emailId, btnId, msgId) {
+      document.getElementById(formId).addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = document.getElementById(emailId).value;
+        const btn = document.getElementById(btnId);
+        const msg = document.getElementById(msgId);
 
-      btn.disabled = true;
-      btn.textContent = "Joining...";
+        btn.disabled = true;
+        btn.textContent = "Joining...";
 
-      try {
-        const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "apikey": SUPABASE_ANON_KEY,
-            "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
-            "Prefer": "return=minimal",
-          },
-          body: JSON.stringify({ email: email.toLowerCase().trim() }),
-        });
+        try {
+          const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "apikey": SUPABASE_ANON_KEY,
+              "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+              "Prefer": "return=minimal",
+            },
+            body: JSON.stringify({ email: email.toLowerCase().trim() }),
+          });
 
-        if (res.ok || res.status === 201) {
-          msg.textContent = "You're on the list! We'll be in touch.";
-          msg.className = "mt-3 text-sm text-emerald-400";
-          document.getElementById("email").value = "";
-        } else if (res.status === 409) {
-          msg.textContent = "You're already on the list!";
-          msg.className = "mt-3 text-sm text-emerald-400";
-        } else {
-          msg.textContent = "Couldn't join — try again later.";
+          if (res.ok || res.status === 201) {
+            msg.textContent = "You're on the list! We'll be in touch.";
+            msg.className = "mt-3 text-sm text-emerald-400";
+            document.getElementById(emailId).value = "";
+          } else if (res.status === 409) {
+            msg.textContent = "You're already on the list!";
+            msg.className = "mt-3 text-sm text-emerald-400";
+          } else {
+            msg.textContent = "Couldn't join — try again later.";
+            msg.className = "mt-3 text-sm text-red-400";
+          }
+        } catch {
+          msg.textContent = "Network error. Please try again.";
           msg.className = "mt-3 text-sm text-red-400";
+        } finally {
+          btn.disabled = false;
+          btn.textContent = formId === "waitlist-form" ? "Join Waitlist" : "Get Early Access";
+          msg.classList.remove("hidden");
         }
-      } catch {
-        msg.textContent = "Network error. Please try again.";
-        msg.className = "mt-3 text-sm text-red-400";
-      } finally {
-        btn.disabled = false;
-        btn.textContent = "Join Waitlist";
-        msg.classList.remove("hidden");
-      }
-    });
+      });
+    }
+
+    setupForm("waitlist-form", "email", "submit-btn", "form-message");
+    setupForm("waitlist-form-2", "email-2", "submit-btn-2", "form-message-2");
   </script>
 
 </body>
