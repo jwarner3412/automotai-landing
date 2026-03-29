@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" fill="none">
+  <!-- Gear icon -->
+  <g transform="translate(2, 4)">
+    <circle cx="24" cy="24" r="18" fill="none" stroke="#34D399" stroke-width="3"/>
+    <circle cx="24" cy="24" r="8" fill="#34D399"/>
+    <!-- Gear teeth -->
+    <rect x="21" y="2" width="6" height="8" rx="1" fill="#34D399"/>
+    <rect x="21" y="38" width="6" height="8" rx="1" fill="#34D399"/>
+    <rect x="2" y="21" width="8" height="6" rx="1" fill="#34D399"/>
+    <rect x="38" y="21" width="8" height="6" rx="1" fill="#34D399"/>
+    <rect x="7" y="7" width="6" height="8" rx="1" fill="#34D399" transform="rotate(45 10 11)"/>
+    <rect x="35" y="7" width="6" height="8" rx="1" fill="#34D399" transform="rotate(-45 38 11)"/>
+    <rect x="7" y="33" width="6" height="8" rx="1" fill="#34D399" transform="rotate(-45 10 37)"/>
+    <rect x="35" y="33" width="6" height="8" rx="1" fill="#34D399" transform="rotate(45 38 37)"/>
+  </g>
+  <text x="56" y="36" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="32" fill="white">automot</text>
+  <text x="230" y="36" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="32" fill="#34D399">AI</text>
+</svg>

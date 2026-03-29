@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" fill="none">
+  <!-- Abstract A / circuit icon -->
+  <g transform="translate(2, 4)">
+    <polygon points="24,2 46,46 2,46" fill="none" stroke="#34D399" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="24" cy="30" r="5" fill="#34D399"/>
+    <line x1="24" y1="18" x2="24" y2="25" stroke="#34D399" stroke-width="2"/>
+    <line x1="12" y1="38" x2="19" y2="38" stroke="#34D399" stroke-width="2"/>
+    <line x1="29" y1="38" x2="36" y2="38" stroke="#34D399" stroke-width="2"/>
+    <!-- circuit dots -->
+    <circle cx="6" cy="8" r="2" fill="#34D399" opacity="0.4"/>
+    <circle cx="42" cy="8" r="2" fill="#34D399" opacity="0.4"/>
+    <circle cx="2" cy="30" r="2" fill="#34D399" opacity="0.4"/>
+    <circle cx="46" cy="30" r="2" fill="#34D399" opacity="0.4"/>
+  </g>
+  <text x="56" y="36" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="32" fill="white">automot</text>
+  <text x="230" y="36" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="32" fill="#34D399">AI</text>
+</svg>

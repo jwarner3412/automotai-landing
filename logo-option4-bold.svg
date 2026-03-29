@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" fill="none">
+  <!-- Bold block style with underline -->
+  <text x="0" y="36" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="36" fill="white" letter-spacing="-2">automot</text>
+  <text x="177" y="36" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="36" fill="#030712" letter-spacing="-2"/>
+  <!-- AI badge -->
+  <rect x="177" y="6" width="48" height="36" rx="6" fill="#34D399"/>
+  <text x="186" y="34" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="28" fill="#030712">AI</text>
+  <!-- Accent line -->
+  <rect x="0" y="44" width="225" height="3" rx="1.5" fill="#34D399"/>
+</svg>
