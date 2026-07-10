@@ -92,6 +92,15 @@ r = requests.delete(
 if r.status_code in (200, 201, 204):
     print(f"  ✓ employees (non-owner)")
 
+# Ensure shop is complimentary
+r = requests.patch(
+    f"{SUPABASE_URL}/rest/v1/shops?id=eq.{DEMO_SHOP_ID}",
+    headers=headers,
+    json={"complimentary": True, "onboarding_complete": True},
+)
+if r.status_code in (200, 201, 204):
+    print(f"  ✓ shop (complimentary + onboarding)")
+
 print("✅ Nuke complete")
 
 # ═══════════════════════════════════════════════════════════
