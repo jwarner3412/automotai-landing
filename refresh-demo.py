@@ -209,7 +209,7 @@ estimate_items = {
         ],
         "items": [
             {"group_idx": 0, "type": "labor", "description": "Front brake pad replacement - labor", "quantity": 1.5, "unit_price": 95.00, "total": 142.50, "sort_order": 0},
-            {"group_idx": 0, "type": "parts", "description": "Front brake pad set (ceramic)", "quantity": 1, "unit_price": 89.99, "total": 89.99, "part_number": "FD-1414C", "sort_order": 1},
+            {"group_idx": 0, "type": "parts", "description": "Front brake pad set (ceramic)", "quantity": 1, "unit_price": 90.00, "total": 90.00, "part_number": "FD-1414C", "sort_order": 1},
             {"group_idx": 1, "type": "labor", "description": "Rear brake pad replacement - labor", "quantity": 1.5, "unit_price": 95.00, "total": 142.50, "sort_order": 0},
             {"group_idx": 1, "type": "parts", "description": "Rear brake pad set (ceramic)", "quantity": 1, "unit_price": 74.99, "total": 74.99, "part_number": "FD-1415C", "sort_order": 1},
         ],
@@ -220,8 +220,8 @@ estimate_items = {
         ],
         "items": [
             {"group_idx": 0, "type": "labor", "description": "Oil change - synthetic (labor)", "quantity": 0.5, "unit_price": 95.00, "total": 47.50, "sort_order": 0},
-            {"group_idx": 0, "type": "parts", "description": "Full synthetic oil 5W-30 (6 qts)", "quantity": 6, "unit_price": 5.50, "total": 33.00, "part_number": "MOB1-5W30", "sort_order": 1},
-            {"group_idx": 0, "type": "parts", "description": "Oil filter", "quantity": 1, "unit_price": 8.99, "total": 8.99, "part_number": "TOY-04152", "sort_order": 2},
+            {"group_idx": 0, "type": "parts", "description": "Full synthetic oil 5W-30 (6 qts)", "quantity": 6, "unit_price": 5.83, "total": 34.98, "part_number": "MOB1-5W30", "sort_order": 1},
+            {"group_idx": 0, "type": "parts", "description": "Oil filter", "quantity": 1, "unit_price": 7.50, "total": 7.50, "part_number": "TOY-04152", "sort_order": 2},
             {"group_idx": 0, "type": "labor", "description": "Tire rotation & balance (labor)", "quantity": 0.5, "unit_price": 80.00, "total": 40.00, "sort_order": 3},
         ],
     },
@@ -230,7 +230,7 @@ estimate_items = {
             {"name": "A/C System Diagnostic", "status": "draft", "sort_order": 0},
         ],
         "items": [
-            {"group_idx": 0, "type": "labor", "description": "A/C system diagnostic - full inspection", "quantity": 1.0, "unit_price": 95.00, "total": 95.00, "sort_order": 0},
+            {"group_idx": 0, "type": "labor", "description": "A/C system diagnostic - full inspection", "quantity": 1.0, "unit_price": 89.99, "total": 89.99, "sort_order": 0},
         ],
     },
     "EST-2026-0045": {
@@ -240,7 +240,7 @@ estimate_items = {
         "items": [
             {"group_idx": 0, "type": "labor", "description": "Timing belt replacement - labor (Cummins 6.7L)", "quantity": 5.0, "unit_price": 95.00, "total": 475.00, "sort_order": 0},
             {"group_idx": 0, "type": "parts", "description": "Timing belt kit (belt, tensioner, idler)", "quantity": 1, "unit_price": 189.99, "total": 189.99, "part_number": "GAT-TCK329", "sort_order": 1},
-            {"group_idx": 0, "type": "parts", "description": "Water pump", "quantity": 1, "unit_price": 89.99, "total": 89.99, "part_number": "GAT-43134", "sort_order": 2},
+            {"group_idx": 0, "type": "parts", "description": "Water pump", "quantity": 1, "unit_price": 90.00, "total": 90.00, "part_number": "GAT-43134", "sort_order": 2},
             {"group_idx": 0, "type": "parts", "description": "Coolant (concentrate, 1 gal)", "quantity": 2, "unit_price": 22.50, "total": 45.00, "part_number": "ZER-G05", "sort_order": 3},
         ],
     },
@@ -280,12 +280,41 @@ inv_data = [
      "paid_at": (now - timedelta(days=2)).isoformat(), "created_at": (now - timedelta(days=3)).isoformat(),
      "due_date": (now + timedelta(days=27)).isoformat()},
     {"invoice_number": "INV-2026-0043", "customer_id": customer_ids[3], "vehicle_id": vehicle_ids[5],
-     "status": "sent", "subtotal": 199.99, "tax_rate": 8.25, "tax_amount": 16.50, "total": 216.49,
+     "status": "sent", "subtotal": 199.98, "tax_rate": 8.25, "tax_amount": 16.50, "total": 216.48,
      "created_at": (now - timedelta(days=1)).isoformat(), "due_date": (now + timedelta(days=29)).isoformat()},
 ]
+invoice_ids = []
 for inv in inv_data:
-    rest("invoices", "POST", {**inv, "shop_id": DEMO_SHOP_ID})
-print(f"    {len(inv_data)} created")
+    r = first(rest("invoices", "POST", {**inv, "shop_id": DEMO_SHOP_ID}))
+    if r:
+        invoice_ids.append(r["id"])
+print(f"    {len(invoice_ids)} created")
+
+# ── Invoice line items ──
+print("  Invoice line items...")
+invoice_items = {
+    "INV-2026-0042": [
+        {"type": "labor", "description": "Front brake pad replacement - labor", "quantity": 1.5, "unit_price": 95.00, "total": 142.50, "sort_order": 0},
+        {"type": "part", "description": "Front brake pad set (ceramic)", "quantity": 1, "unit_price": 90.00, "total": 90.00, "sort_order": 1},
+        {"type": "labor", "description": "Rear brake pad replacement - labor", "quantity": 1.5, "unit_price": 95.00, "total": 142.50, "sort_order": 2},
+        {"type": "part", "description": "Rear brake pad set (ceramic)", "quantity": 1, "unit_price": 74.99, "total": 74.99, "sort_order": 3},
+    ],
+    "INV-2026-0043": [
+        {"type": "labor", "description": "Spark plug replacement - labor", "quantity": 1.5, "unit_price": 95.00, "total": 142.50, "sort_order": 0},
+        {"type": "part", "description": "Spark plug (NGK Laser Iridium)", "quantity": 4, "unit_price": 14.37, "total": 57.48, "sort_order": 1},
+    ],
+}
+for i, inv_id in enumerate(invoice_ids):
+    inn = inv_data[i]["invoice_number"]
+    if inn in invoice_items:
+        for item in invoice_items[inn]:
+            rest("invoice_line_items", "POST", {
+                "invoice_id": inv_id,
+                "type": item["type"], "description": item["description"],
+                "quantity": item["quantity"], "unit_price": item["unit_price"],
+                "total": item["total"], "sort_order": item["sort_order"],
+            })
+print(f"    {sum(len(v) for v in invoice_items.values())} line items")
 
 # ── Appointments ──
 print("  Appointments...")
