@@ -195,6 +195,82 @@ for e in est_data:
         estimate_ids.append(r["id"])
 print(f"    {len(estimate_ids)} created")
 
+# ── Job groups + line items ──
+print("  Job groups & line items...")
+# Get owner employee for submitted_by
+emp = first(rest(f"employees?shop_id=eq.{DEMO_SHOP_ID}&user_id=not.is.null&select=id"))
+emp_id = emp["id"] if emp else None
+
+estimate_items = {
+    "EST-2026-0042": {
+        "groups": [
+            {"name": "Brake Service - Front", "status": "approved", "sort_order": 0},
+            {"name": "Brake Service - Rear", "status": "approved", "sort_order": 1},
+        ],
+        "items": [
+            {"group_idx": 0, "type": "labor", "description": "Front brake pad replacement - labor", "quantity": 1.5, "unit_price": 95.00, "total": 142.50, "sort_order": 0},
+            {"group_idx": 0, "type": "parts", "description": "Front brake pad set (ceramic)", "quantity": 1, "unit_price": 89.99, "total": 89.99, "part_number": "FD-1414C", "sort_order": 1},
+            {"group_idx": 1, "type": "labor", "description": "Rear brake pad replacement - labor", "quantity": 1.5, "unit_price": 95.00, "total": 142.50, "sort_order": 0},
+            {"group_idx": 1, "type": "parts", "description": "Rear brake pad set (ceramic)", "quantity": 1, "unit_price": 74.99, "total": 74.99, "part_number": "FD-1415C", "sort_order": 1},
+        ],
+    },
+    "EST-2026-0043": {
+        "groups": [
+            {"name": "Routine Maintenance", "status": "submitted", "sort_order": 0},
+        ],
+        "items": [
+            {"group_idx": 0, "type": "labor", "description": "Oil change - synthetic (labor)", "quantity": 0.5, "unit_price": 95.00, "total": 47.50, "sort_order": 0},
+            {"group_idx": 0, "type": "parts", "description": "Full synthetic oil 5W-30 (6 qts)", "quantity": 6, "unit_price": 5.50, "total": 33.00, "part_number": "MOB1-5W30", "sort_order": 1},
+            {"group_idx": 0, "type": "parts", "description": "Oil filter", "quantity": 1, "unit_price": 8.99, "total": 8.99, "part_number": "TOY-04152", "sort_order": 2},
+            {"group_idx": 0, "type": "labor", "description": "Tire rotation & balance (labor)", "quantity": 0.5, "unit_price": 80.00, "total": 40.00, "sort_order": 3},
+        ],
+    },
+    "EST-2026-0044": {
+        "groups": [
+            {"name": "A/C System Diagnostic", "status": "draft", "sort_order": 0},
+        ],
+        "items": [
+            {"group_idx": 0, "type": "labor", "description": "A/C system diagnostic - full inspection", "quantity": 1.0, "unit_price": 95.00, "total": 95.00, "sort_order": 0},
+        ],
+    },
+    "EST-2026-0045": {
+        "groups": [
+            {"name": "Timing Belt Service", "status": "submitted", "sort_order": 0},
+        ],
+        "items": [
+            {"group_idx": 0, "type": "labor", "description": "Timing belt replacement - labor (Cummins 6.7L)", "quantity": 5.0, "unit_price": 95.00, "total": 475.00, "sort_order": 0},
+            {"group_idx": 0, "type": "parts", "description": "Timing belt kit (belt, tensioner, idler)", "quantity": 1, "unit_price": 189.99, "total": 189.99, "part_number": "GAT-TCK329", "sort_order": 1},
+            {"group_idx": 0, "type": "parts", "description": "Water pump", "quantity": 1, "unit_price": 89.99, "total": 89.99, "part_number": "GAT-43134", "sort_order": 2},
+            {"group_idx": 0, "type": "parts", "description": "Coolant (concentrate, 1 gal)", "quantity": 2, "unit_price": 22.50, "total": 45.00, "part_number": "ZER-G05", "sort_order": 3},
+        ],
+    },
+}
+
+for i, est_id in enumerate(estimate_ids):
+    en = est_data[i]["estimate_number"]
+    if en not in estimate_items:
+        continue
+    data = estimate_items[en]
+    group_ids = []
+    for g in data["groups"]:
+        r = first(rest("job_groups", "POST", {
+            "estimate_id": est_id, "shop_id": DEMO_SHOP_ID,
+            "name": g["name"], "status": g["status"], "sort_order": g["sort_order"],
+            "submitted_by": emp_id if g["status"] in ("submitted", "approved") else None,
+        }))
+        if r:
+            group_ids.append(r["id"])
+    for item in data["items"]:
+        rest("estimate_line_items", "POST", {
+            "estimate_id": est_id, "shop_id": DEMO_SHOP_ID,
+            "job_group_id": group_ids[item["group_idx"]],
+            "type": item["type"], "description": item["description"],
+            "quantity": item["quantity"], "unit_price": item["unit_price"],
+            "total": item["total"], "part_number": item.get("part_number"),
+            "sort_order": item["sort_order"],
+        })
+print(f"    {sum(len(v['items']) for v in estimate_items.values())} line items across {sum(len(v['groups']) for v in estimate_items.values())} groups")
+
 # ── Invoices ──
 print("  Invoices...")
 inv_data = [
