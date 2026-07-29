@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — automotAI</title>
+  <meta name="description" content="Simple, transparent pricing for auto repair shop management software. Start free, upgrade when you're ready.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html { overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    .glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.10) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      max-width: 100vw;
+    }
+    .glow-top { top: -200px; left: 50%; transform: translateX(-50%); }
+    .glow-mid { top: 600px; right: -200px; }
+    @media (max-width: 640px) {
+      .glow-mid { right: -300px; }
+    }
+    .pricing-card {
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+    .pricing-card:hover {
+      border-color: rgba(52, 211, 153, 0.3);
+      background-color: rgba(52, 211, 153, 0.03);
+    }
+    .pricing-card.featured {
+      border-color: rgba(52, 211, 153, 0.4);
+      background-color: rgba(52, 211, 153, 0.05);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-950 text-white relative overflow-x-hidden">
+
+  <!-- Ambient glows -->
+  <div class="glow glow-top"></div>
+  <div class="glow glow-mid"></div>
+
+  <!-- Nav -->
+  <nav class="relative z-10 border-b border-gray-800/60">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <a href="/" class="text-2xl font-bold tracking-tight hover:opacity-80 transition-opacity">automot<span class="text-emerald-400">AI</span></a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="hidden sm:inline-block text-sm text-gray-300 hover:text-white transition-colors">Home</a>
+        <a href="/features.html" class="hidden sm:inline-block text-sm text-gray-300 hover:text-white transition-colors">Features</a>
+        <a href="/pricing.html" class="hidden sm:inline-block text-sm text-emerald-400 font-medium">Pricing</a>
+        <a href="https://app.automotai.com" class="hidden sm:inline-block rounded-lg border border-emerald-400/30 px-4 py-2 text-sm font-medium text-emerald-400 hover:bg-emerald-400/10 transition-colors">
+          Sign In &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative z-10 mx-auto max-w-4xl px-6 pt-24 pb-16 text-center">
+    <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">
+      Simple, honest pricing
+    </h1>
+    <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-400 leading-relaxed">
+      Start free. Upgrade when you're ready. No hidden fees, no contracts, cancel anytime.
+    </p>
+    <div class="mt-6 inline-block rounded-full border border-amber-400/20 bg-amber-400/5 px-4 py-1.5 text-sm text-amber-400 font-medium">
+      Early Dev Sale — $10 off all plans, grandfathered for life
+    </div>
+  </section>
+
+  <!-- Pricing Cards -->
+  <section class="relative z-10 mx-auto max-w-6xl px-6 pb-20">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+      <!-- Free -->
+      <div class="pricing-card rounded-xl border border-gray-800 bg-gray-900/80 p-6 flex flex-col">
+        <div class="text-sm font-medium text-gray-400 mb-1">Free</div>
+        <div class="text-4xl font-extrabold mb-1">$0</div>
+        <div class="text-sm text-gray-500 mb-6">forever</div>
+        <a href="https://app.automotai.com/signup" class="rounded-lg border border-gray-700 px-4 py-2.5 text-sm font-semibold text-center text-gray-300 hover:border-gray-500 hover:text-white transition-colors mb-6">
+          Get Started
+        </a>
+        <div class="text-xs text-gray-500 mb-4 font-medium uppercase tracking-wide">Includes</div>
+        <ul class="space-y-2 text-sm text-gray-400 flex-1">
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Unlimited estimates, jobs, invoices
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Stripe payment processing
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Customer & vehicle management
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Service templates
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> 1 user
+          </li>
+        </ul>
+        <div class="text-xs text-gray-500 mt-4 mb-2 font-medium uppercase tracking-wide">Not included</div>
+        <ul class="space-y-1.5 text-sm text-gray-600">
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5">—</span> Customer portal
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5">—</span> Appointments & DVI
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5">—</span> AI assistant*
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5">—</span> QuickBooks, SMS, reminders
+          </li>
+        </ul>
+        <p class="text-xs text-gray-600 mt-3 leading-relaxed">*AI available as opt-in add-on — $0 subscription with metered billing at $1.20/$4.80 per M tokens. Requires payment method on file.</p>
+      </div>
+
+      <!-- Basic -->
+      <div class="pricing-card featured rounded-xl border bg-gray-900/80 p-6 flex flex-col relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-0.5 text-xs font-medium text-emerald-400">
+          Most Popular
+        </div>
+        <div class="text-sm font-medium text-emerald-400 mb-1">Basic</div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-4xl font-extrabold">$29</span>
+          <span class="text-sm text-gray-400">/mo</span>
+        </div>
+        <div class="text-sm text-gray-500 mb-1">$290/yr ($24/mo)</div>
+        <div class="text-sm text-amber-400/80 mb-6">$19/mo during early dev</div>
+        <a href="https://app.automotai.com/signup" class="rounded-lg bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-center text-gray-950 hover:bg-emerald-400 transition-all hover:shadow-lg hover:shadow-emerald-500/20 mb-6">
+          Start Free Trial
+        </a>
+        <div class="text-xs text-gray-500 mb-4 font-medium uppercase tracking-wide">Everything in Free, plus</div>
+        <ul class="space-y-2 text-sm text-gray-400 flex-1">
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Customer portal
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> AI assistant — 5M input / 1.5M output tokens
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> OCR registration scanning
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Reports & analytics
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Time tracking
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Calendar sync (Google, CalDAV)
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Email notifications
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> 3 users
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Email support
+          </li>
+        </ul>
+        <div class="text-xs text-gray-500 mt-4 mb-2 font-medium uppercase tracking-wide">Overage</div>
+        <p class="text-sm text-gray-400">$1.05/M input · $4.20/M output</p>
+      </div>
+
+      <!-- Pro -->
+      <div class="pricing-card rounded-xl border border-gray-800 bg-gray-900/80 p-6 flex flex-col">
+        <div class="text-sm font-medium text-gray-400 mb-1">Pro</div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-4xl font-extrabold">$49</span>
+          <span class="text-sm text-gray-400">/mo</span>
+        </div>
+        <div class="text-sm text-gray-500 mb-1">$490/yr ($41/mo)</div>
+        <div class="text-sm text-amber-400/80 mb-6">$39/mo during early dev</div>
+        <a href="https://app.automotai.com/signup" class="rounded-lg border border-gray-700 px-4 py-2.5 text-sm font-semibold text-center text-gray-300 hover:border-gray-500 hover:text-white transition-colors mb-6">
+          Start Free Trial
+        </a>
+        <div class="text-xs text-gray-500 mb-4 font-medium uppercase tracking-wide">Everything in Basic, plus</div>
+        <ul class="space-y-2 text-sm text-gray-400 flex-1">
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> DVI inspections with photo capture
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Appointment scheduling & calendar
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> QuickBooks Online sync
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> SMS reminders — 50 included, $0.05/msg after
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> AI follow-up engine
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> AI review responder
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Service reminder engine
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> 10M input / 3M output tokens
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> 5 users
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 mt-0.5">✓</span> Priority support
+          </li>
+        </ul>
+        <div class="text-xs text-gray-500 mt-4 mb-2 font-medium uppercase tracking-wide">Overage</div>
+        <p class="text-sm text-gray-400">$0.75/M input · $3.00/M output</p>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="pricing-card rounded-xl border border-gray-800 bg-gray-900/80 p-6 flex flex-col opacity-60">
+        <div class="text-sm font-medium text-gray-500 mb-1">Enterprise <span class="text-xs text-amber-400/60 ml-1">Coming v2</span></div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-4xl font-extrabold text-gray-500">$79</span>
+          <span class="text-sm text-gray-600">/mo</span>
+        </div>
+        <div class="text-sm text-gray-600 mb-6">$790/yr ($66/mo)</div>
+        <div class="rounded-lg border border-gray-800 px-4 py-2.5 text-sm font-semibold text-center text-gray-600 mb-6">
+          Coming Soon
+        </div>
+        <div class="text-xs text-gray-600 mb-4 font-medium uppercase tracking-wide">Everything in Pro, plus</div>
+        <ul class="space-y-2 text-sm text-gray-600 flex-1">
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5">✓</span> Unlimited users
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5">✓</span> White-label customer portal
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5">✓</span> API access
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5">✓</span> Custom AI personality
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5">✓</span> 20M input / 6M output tokens
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5">✓</span> 200 SMS included
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5">✓</span> Dedicated support
+          </li>
+        </ul>
+        <div class="text-xs text-gray-600 mt-4 mb-2 font-medium uppercase tracking-wide">Overage</div>
+        <p class="text-sm text-gray-600">$0.50/M input · $2.00/M output</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Feature Comparison -->
+  <section class="relative z-10 border-t border-gray-800/60 bg-gray-900/30">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <h2 class="text-3xl font-bold sm:text-4xl text-center mb-12">What's in each plan</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-gray-800">
+              <th class="text-left py-3 px-4 text-gray-400 font-medium">Feature</th>
+              <th class="text-center py-3 px-4 text-gray-400 font-medium">Free</th>
+              <th class="text-center py-3 px-4 text-emerald-400 font-medium">Basic</th>
+              <th class="text-center py-3 px-4 text-gray-400 font-medium">Pro</th>
+              <th class="text-center py-3 px-4 text-gray-500 font-medium">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-400">
+
+            <!-- Core -->
+            <tr class="border-b border-gray-800/60"><td colspan="5" class="py-3 px-4 text-xs text-gray-500 font-medium uppercase tracking-wide">Core Workflow</td></tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Estimates, jobs, invoices</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Stripe payments</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Customer & vehicle management</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Service templates</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+
+            <!-- Customer-Facing -->
+            <tr class="border-b border-gray-800/60"><td colspan="5" class="py-3 px-4 text-xs text-gray-500 font-medium uppercase tracking-wide">Customer-Facing</td></tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Customer portal</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">OCR registration scanning</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Appointment booking</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">DVI inspections</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+
+            <!-- AI -->
+            <tr class="border-b border-gray-800/60"><td colspan="5" class="py-3 px-4 text-xs text-gray-500 font-medium uppercase tracking-wide">AI</td></tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">AI assistant</td>
+              <td class="text-center py-2.5 px-4 text-xs text-gray-500">Opt-in, 0 tokens</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">5M / 1.5M tokens</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">10M / 3M tokens</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">20M / 6M tokens</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">AI follow-up engine</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">AI review responder</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Custom AI personality</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+
+            <!-- Integrations -->
+            <tr class="border-b border-gray-800/60"><td colspan="5" class="py-3 px-4 text-xs text-gray-500 font-medium uppercase tracking-wide">Integrations & Automation</td></tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Calendar sync (Google, CalDAV)</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Email notifications</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">QuickBooks Online sync</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">SMS reminders</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">50 incl, $0.05/msg</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">200 incl, $0.05/msg</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Service reminder engine</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+
+            <!-- Business -->
+            <tr class="border-b border-gray-800/60"><td colspan="5" class="py-3 px-4 text-xs text-gray-500 font-medium uppercase tracking-wide">Business</td></tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Reports & analytics</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Time tracking</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Multi-user teams</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">3 users</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">5 users</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">Unlimited</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">White-label portal</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">API access</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+
+            <!-- Support -->
+            <tr class="border-b border-gray-800/60"><td colspan="5" class="py-3 px-4 text-xs text-gray-500 font-medium uppercase tracking-wide">Support</td></tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Email support</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">—</td>
+            </tr>
+            <tr class="border-b border-gray-800/40">
+              <td class="py-2.5 px-4">Priority support</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">✓</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">—</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4">Dedicated support</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-700">—</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">✓</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Token & SMS Pricing -->
+  <section class="relative z-10 border-t border-gray-800/60">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <h2 class="text-3xl font-bold sm:text-4xl text-center mb-12">How billing works</h2>
+
+      <div class="grid gap-8 sm:grid-cols-2">
+
+        <!-- AI Tokens -->
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <h3 class="text-lg font-semibold mb-4">🤖 AI Token Usage</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">
+            Every AI interaction uses tokens — input (what the system reads) and output (what it writes). Each plan includes a monthly token allowance. If you go over, you're billed at your plan's overage rate.
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-gray-800">
+                  <th class="text-left py-2 text-gray-500 font-medium">Plan</th>
+                  <th class="text-right py-2 text-gray-500 font-medium">Included Input</th>
+                  <th class="text-right py-2 text-gray-500 font-medium">Included Output</th>
+                  <th class="text-right py-2 text-gray-500 font-medium">Overage Input</th>
+                  <th class="text-right py-2 text-gray-500 font-medium">Overage Output</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-400">
+                <tr class="border-b border-gray-800/40">
+                  <td class="py-2">Free (opt-in)</td>
+                  <td class="text-right py-2">0</td>
+                  <td class="text-right py-2">0</td>
+                  <td class="text-right py-2">$1.20/M</td>
+                  <td class="text-right py-2">$4.80/M</td>
+                </tr>
+                <tr class="border-b border-gray-800/40">
+                  <td class="py-2 text-emerald-400">Basic</td>
+                  <td class="text-right py-2">5,000,000</td>
+                  <td class="text-right py-2">1,500,000</td>
+                  <td class="text-right py-2">$1.05/M</td>
+                  <td class="text-right py-2">$4.20/M</td>
+                </tr>
+                <tr class="border-b border-gray-800/40">
+                  <td class="py-2">Pro</td>
+                  <td class="text-right py-2">10,000,000</td>
+                  <td class="text-right py-2">3,000,000</td>
+                  <td class="text-right py-2">$0.75/M</td>
+                  <td class="text-right py-2">$3.00/M</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-gray-500">Enterprise</td>
+                  <td class="text-right py-2 text-gray-500">20,000,000</td>
+                  <td class="text-right py-2 text-gray-500">6,000,000</td>
+                  <td class="text-right py-2 text-gray-500">$0.50/M</td>
+                  <td class="text-right py-2 text-gray-500">$2.00/M</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-gray-500 mt-4 leading-relaxed">
+            A typical shop using the AI daily burns about 2-3M input tokens per month. The included allowances cover normal use — overage only kicks in for heavy AI shops.
+          </p>
+        </div>
+
+        <!-- SMS -->
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <h3 class="text-lg font-semibold mb-4">📱 SMS Messages</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">
+            SMS covers appointment reminders, follow-up notifications, and service reminders. Each plan includes a monthly quota. Additional messages are $0.05 each.
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-gray-800">
+                  <th class="text-left py-2 text-gray-500 font-medium">Plan</th>
+                  <th class="text-right py-2 text-gray-500 font-medium">Included</th>
+                  <th class="text-right py-2 text-gray-500 font-medium">Overage</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-400">
+                <tr class="border-b border-gray-800/40">
+                  <td class="py-2">Free</td>
+                  <td class="text-right py-2 text-gray-700">—</td>
+                  <td class="text-right py-2 text-gray-700">—</td>
+                </tr>
+                <tr class="border-b border-gray-800/40">
+                  <td class="py-2 text-emerald-400">Basic</td>
+                  <td class="text-right py-2 text-gray-700">—</td>
+                  <td class="text-right py-2 text-gray-700">—</td>
+                </tr>
+                <tr class="border-b border-gray-800/40">
+                  <td class="py-2">Pro</td>
+                  <td class="text-right py-2">50 / month</td>
+                  <td class="text-right py-2">$0.05 / msg</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-gray-500">Enterprise</td>
+                  <td class="text-right py-2 text-gray-500">200 / month</td>
+                  <td class="text-right py-2 text-gray-500">$0.05 / msg</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-gray-500 mt-4 leading-relaxed">
+            SMS is only available on Pro and Enterprise plans. You can set a monthly spending cap in your billing settings to prevent surprise charges.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="relative z-10 border-t border-gray-800/60 bg-gray-900/30">
+    <div class="mx-auto max-w-3xl px-6 py-20">
+      <h2 class="text-3xl font-bold sm:text-4xl text-center mb-12">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <h3 class="font-semibold mb-2">Can I switch plans anytime?</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Yes. Upgrade or downgrade anytime from your billing settings. When you upgrade, you get immediate access to the new features and we prorate the difference. When you downgrade, the change takes effect at the end of your billing period.</p>
+        </div>
+
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <h3 class="font-semibold mb-2">What's the early dev sale?</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">While automotAI is in early development, all paid plans are $10 off. Sign up during this period and you keep the discount forever — even after prices go up. It's our way of thanking early adopters.</p>
+        </div>
+
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <h3 class="font-semibold mb-2">How does the free trial work?</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">14 days of full Pro access. No credit card required. At the end of the trial, choose a plan or continue on Free. Your data stays with you either way.</p>
+        </div>
+
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <h3 class="font-semibold mb-2">What happens if I hit my token limit?</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">On paid plans, the AI keeps working and overage is billed to your payment method on file. You can set a monthly spending cap in your billing settings. On Free, the AI stops until the next billing period — you'll need to upgrade or wait.</p>
+        </div>
+
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <h3 class="font-semibold mb-2">Can I cancel anytime?</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Yes. Cancel anytime from your billing settings. Your subscription remains active until the end of the billing period. Annual plans get a prorated refund for unused months.</p>
+        </div>
+
+        <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <h3 class="font-semibold mb-2">Do you charge platform fees on payments?</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Yes. Free tier pays 3% per transaction. Basic and Pro pay 1.5%. Enterprise pays 1.0%. This covers Stripe processing and platform costs. The fee is shown on every invoice and payment confirmation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative z-10 border-t border-gray-800/60">
+    <div class="mx-auto max-w-3xl px-6 py-24 text-center">
+      <h2 class="text-3xl font-bold sm:text-4xl">Start your 14-day free trial</h2>
+      <p class="mt-4 text-lg text-gray-400">
+        Full Pro access. No credit card. No commitment. See what automotAI can do for your shop.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-4">
+        <a href="https://app.automotai.com/signup" class="rounded-lg bg-emerald-500 px-8 py-4 text-lg font-bold text-gray-950 hover:bg-emerald-400 transition-all hover:shadow-lg hover:shadow-emerald-500/20">
+          Start Free Trial &rarr;
+        </a>
+        <p class="text-sm text-gray-500">No credit card required. 14-day full access.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-gray-800/60">
+    <div class="mx-auto max-w-6xl px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <span class="text-sm text-gray-500">&copy; 2026 AutomotAI, an AutomotAI LLC product. All rights reserved.</span>
+      <div class="flex gap-6 text-sm text-gray-500">
+        <a href="/" class="hover:text-gray-300 transition-colors">Home</a>
+        <a href="/features.html" class="hover:text-gray-300 transition-colors">Features</a>
+        <a href="/pricing.html" class="hover:text-gray-300 transition-colors">Pricing</a>
+        <a href="https://app.automotai.com" class="hover:text-gray-300 transition-colors">Dashboard</a>
+        <a href="https://app.automotai.com/terms" class="hover:text-gray-300 transition-colors">Terms</a>
+        <a href="https://app.automotai.com/privacy" class="hover:text-gray-300 transition-colors">Privacy</a>
+        <a href="mailto:hello@automotai.com" class="hover:text-gray-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
