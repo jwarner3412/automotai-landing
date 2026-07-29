@@ -127,12 +127,11 @@
           <div class="text-2xl mb-3">💰</div>
           <h3 class="text-lg font-semibold">Tax &amp; Money Math</h3>
           <p class="mt-2 text-sm text-gray-400 leading-relaxed">
-            Per-shop tax configuration with labor tax toggle. Single SQL engine computes all totals — no rounding errors, no drift between what you see and what the customer sees. Every money mutation is atomic.
+            Per-shop tax rate with a toggle for whether you tax labor. Every number on every estimate, invoice, and report comes from the same calculation — no rounding errors, no discrepancies between what you see and what the customer sees.
           </p>
           <ul class="mt-3 space-y-1 text-xs text-gray-500">
             <li>&bull; Per-shop tax rate + tax labor toggle</li>
-            <li>&bull; Single source of truth for all money math</li>
-            <li>&bull; Atomic database transactions — no partial writes</li>
+            <li>&bull; Consistent totals across estimates, invoices, and reports</li>
             <li>&bull; Customer credit and overpayment handling</li>
             <li>&bull; Payment terms with configurable due dates</li>
           </ul>
@@ -497,16 +496,15 @@
 
         <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
           <div class="text-2xl mb-3">🔒</div>
-          <h3 class="text-lg font-semibold">Enterprise Security</h3>
+          <h3 class="text-lg font-semibold">Security</h3>
           <p class="mt-2 text-sm text-gray-400 leading-relaxed">
-            CSP, HSTS, X-Frame-Options DENY. Row-Level Security on every database table. Rate limiting on auth endpoints. Audit logging. Portal JWT tokens with expiry. Your data is locked down.
+            Your data is locked down. Every customer record, invoice, and payment is protected at the database level — no one can access another shop's data. Full audit trail so you can see who did what and when.
           </p>
           <ul class="mt-3 space-y-1 text-xs text-gray-500">
-            <li>&bull; CSP, HSTS, X-Frame-Options DENY</li>
-            <li>&bull; Row-Level Security (RLS) on all tables</li>
-            <li>&bull; Rate limiting (fail-closed on auth endpoints)</li>
-            <li>&bull; Comprehensive audit logging</li>
-            <li>&bull; CSRF hardening</li>
+            <li>&bull; Shop data is isolated — nobody sees what isn't theirs</li>
+            <li>&bull; Full audit log of every action</li>
+            <li>&bull; Customer portal access is secure and time-limited</li>
+            <li>&bull; PCI-compliant payment processing via Stripe</li>
           </ul>
         </div>
 
