@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    html { overflow-x: hidden; }
     body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
     .glow {
       position: absolute;
@@ -24,6 +25,10 @@
     .glow-mid { top: 800px; right: -200px; }
     .glow-low { top: 2400px; left: -200px; }
     .glow-deep { top: 4200px; right: -200px; }
+    @media (max-width: 640px) {
+      .glow-mid, .glow-deep { right: -300px; }
+      .glow-low { left: -300px; }
+    }
     .feature-card {
       transition: border-color 0.2s, background-color 0.2s;
     }
@@ -33,7 +38,7 @@
     }
   </style>
 </head>
-<body class="min-h-screen bg-gray-950 text-white relative overflow-x-hidden" style="-webkit-overflow-scrolling: touch;">
+<body class="min-h-screen bg-gray-950 text-white relative overflow-x-hidden">
 
   <!-- Ambient glows -->
   <div class="glow glow-top"></div>
