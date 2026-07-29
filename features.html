@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features — automotAI | AI-Powered Auto Shop Management</title>
+  <meta name="description" content="Every feature automotAI offers — AI assistant, estimates, invoicing, digital vehicle inspections, customer portal, scheduling, payments, QuickBooks sync, and more.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    .glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.10) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      max-width: 100vw;
+    }
+    .glow-top { top: -200px; left: 50%; transform: translateX(-50%); }
+    .glow-mid { top: 1200px; right: -200px; }
+    .glow-low { top: 2800px; left: -200px; }
+    .feature-card {
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+    .feature-card:hover {
+      border-color: rgba(52, 211, 153, 0.3);
+      background-color: rgba(52, 211, 153, 0.03);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-950 text-white relative overflow-x-hidden" style="-webkit-overflow-scrolling: touch;">
+
+  <!-- Ambient glows -->
+  <div class="glow glow-top"></div>
+  <div class="glow glow-mid"></div>
+  <div class="glow glow-low"></div>
+
+  <!-- Nav -->
+  <nav class="relative z-10 border-b border-gray-800/60">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <a href="/" class="text-2xl font-bold tracking-tight hover:opacity-80 transition-opacity">automot<span class="text-emerald-400">AI</span></a>
+      <div class="flex items-center gap-6">
+        <a href="/features.html" class="hidden sm:inline-block text-sm text-gray-300 hover:text-white transition-colors">Features</a>
+        <a href="https://app.automotai.com" class="hidden sm:inline-block rounded-lg border border-emerald-400/30 px-4 py-2 text-sm font-medium text-emerald-400 hover:bg-emerald-400/10 transition-colors">
+          Sign In &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="relative z-10 mx-auto max-w-4xl px-6 pt-24 pb-16 text-center">
+    <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+      Everything your shop needs
+    </h1>
+    <p class="mx-auto mt-6 max-w-2xl text-xl text-gray-400 leading-relaxed">
+      automotAI replaces your clipboard, your whiteboard, your spreadsheet, and your filing cabinet — with one AI-powered platform built for auto repair shops.
+    </p>
+  </section>
+
+  <!-- ===== AI & AUTOMATION ===== -->
+  <section class="relative z-10 border-t border-gray-800/60">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <div class="mb-12">
+        <div class="inline-block rounded-full border border-emerald-400/20 bg-emerald-400/5 px-4 py-1.5 text-sm text-emerald-400 mb-4 font-medium">
+          The Differentiator
+        </div>
+        <h2 class="text-3xl font-bold sm:text-4xl">AI &amp; Automation</h2>
+        <p class="mt-3 text-lg text-gray-400 max-w-2xl">
+          This is what sets automotAI apart. An AI that knows your shop, your customers, your pricing, and your schedule — working alongside your team every day.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <!-- AI Assistant Chat -->
+        <div class="feature-card rounded-xl border border-emerald-900/40 bg-emerald-950/10 p-6">
+          <div class="text-2xl mb-3">🤖</div>
+          <h3 class="text-lg font-semibold">AI Assistant Chat</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            A shop-aware AI copilot that lives in your dashboard. Chat with it to build estimates, look up customer history, schedule appointments, check vehicle records, and answer questions — all in plain English. It knows your services, your pricing, your knowledge base, and your customers. Think of it as an extra service writer who never clocks out.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Real-time streaming responses</li>
+            <li>&bull; Tool calls: estimates, appointments, customers, vehicles, DVI, knowledge base</li>
+            <li>&bull; Persistent sidebar widget — always one click away</li>
+          </ul>
+        </div>
+
+        <!-- AI Follow-Up Engine -->
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">✉️</div>
+          <h3 class="text-lg font-semibold">AI Follow-Up Engine</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Your AI reviews every customer's history — DVI findings, declined services, upcoming service intervals, dormant customers — and drafts personalized follow-up messages with reasoning and priority. You review, edit if needed, and send. What used to take hours now takes minutes. Nobody else in the industry has this.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; 6 follow-up types: declined service, DVI finding, service due, dormant, post-service, general</li>
+            <li>&bull; AI generates — human approves and sends</li>
+            <li>&bull; Dedicated /follow-ups dashboard with review/send workflow</li>
+          </ul>
+        </div>
+
+        <!-- AI Personality Editor -->
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🎭</div>
+          <h3 class="text-lg font-semibold">AI Personality Editor</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Customize how your AI talks to customers. Set the tone, greeting, and behavior — professional and formal, friendly and casual, or anywhere in between. Your AI represents your brand, so it should sound like you.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Per-shop customization via Settings → AI</li>
+            <li>&bull; Tone, greeting, and behavior controls</li>
+          </ul>
+        </div>
+
+        <!-- Knowledge Base -->
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">📚</div>
+          <h3 class="text-lg font-semibold">Knowledge Base</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Teach your AI everything about your shop. Add shop-specific knowledge — common procedures, pricing rules, warranty policies, preferred vendors — and the AI draws from it in every conversation. The more you add, the smarter it gets.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Shop-specific knowledge entries</li>
+            <li>&bull; AI references it in every chat and follow-up</li>
+            <li>&bull; Dedicated /knowledge page for editing</li>
+          </ul>
+        </div>
+
+        <!-- OCR Registration Scanning -->
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">📸</div>
+          <h3 class="text-lg font-semibold">OCR Registration Scanning</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Snap a photo of a vehicle registration card and the AI extracts make, model, year, VIN, and license plate automatically. No more typing VINs by hand. Add a new vehicle to the system in seconds.
+          </p>
+        </div>
+
+        <!-- Review Responder -->
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">⭐</div>
+          <h3 class="text-lg font-semibold">Review Responder</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            AI helps you respond to customer reviews — Google, Yelp, anywhere. Draft professional, personalized responses that reflect your shop's voice. Turn reviews into relationship builders without spending hours on them.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Dedicated /reviews page</li>
+            <li>&bull; AI drafts — you review and post</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ESTIMATES & INVOICING ===== -->
+  <section class="relative z-10 border-t border-gray-800/60 bg-gray-900/30">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold sm:text-4xl">Estimates &amp; Invoicing</h2>
+        <p class="mt-3 text-lg text-gray-400 max-w-2xl">
+          The core of your business. Build professional estimates, get customer approval, convert to invoices — all in one flow.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">📝</div>
+          <h3 class="text-lg font-semibold">Smart Estimates</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Build estimates organized into job groups — engine work, brakes, suspension — each with its own line items. Customers approve or reject per group, not all-or-nothing. Drag-and-drop reordering. Inline editing. Professional PDF output.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Job groups with per-group customer approve/reject</li>
+            <li>&bull; 7-status lifecycle: Draft → Sent → Awaiting Approval → Approved / Declined / Needs Revision / Voided</li>
+            <li>&bull; Drag-and-drop group reordering</li>
+            <li>&bull; Discount support (percent or dollar amount)</li>
+            <li>&bull; AI Explain — AI explains line items to customers</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🧾</div>
+          <h3 class="text-lg font-semibold">Professional Invoices</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            One click converts approved estimate groups to an invoice. Professional PDFs with proper tax calculation. Track payments against invoices with real-time balance. Multi-invoice payment support.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; One-click estimate → invoice conversion</li>
+            <li>&bull; Invoice status lifecycle: draft → sent → paid → void</li>
+            <li>&bull; Payment tracking with running balance</li>
+            <li>&bull; Multi-invoice payment support</li>
+            <li>&bull; Partial conversion — invoice individual groups without closing the estimate</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">💰</div>
+          <h3 class="text-lg font-semibold">Tax &amp; Money Math</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Per-shop tax configuration with labor tax toggle. Single SQL engine computes all totals — no rounding errors, no drift between what you see and what the customer sees. Every money mutation is atomic.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Per-shop tax rate + tax labor toggle</li>
+            <li>&bull; Single source of truth for all money math</li>
+            <li>&bull; Atomic database transactions — no partial writes</li>
+            <li>&bull; Customer credit and overpayment handling</li>
+            <li>&bull; Payment terms with configurable due dates</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIGITAL VEHICLE INSPECTIONS ===== -->
+  <section class="relative z-10 border-t border-gray-800/60">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold sm:text-4xl">Digital Vehicle Inspections</h2>
+        <p class="mt-3 text-lg text-gray-400 max-w-2xl">
+          Replace paper inspection sheets with photo-based digital inspections. Customers see what you see — and approve repairs right from the report.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div class="feature-card rounded-xl border border-emerald-900/40 bg-emerald-950/10 p-6">
+          <div class="text-2xl mb-3">🔍</div>
+          <h3 class="text-lg font-semibold">Photo-Based Inspections</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Technicians step through customizable inspection templates, capturing photos at each checkpoint. Condition ratings — good, fair, poor, critical — with notes and photos attached to every finding. No more "they didn't believe it needed the work."
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Customizable inspection templates per shop</li>
+            <li>&bull; Photo capture per finding (Supabase Storage)</li>
+            <li>&bull; Condition ratings: good / fair / poor / critical</li>
+            <li>&bull; Technician step-through UI at /jobs/[id]/dvi</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">👁️</div>
+          <h3 class="text-lg font-semibold">Customer DVI Portal</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Customers view their inspection results in the portal — complete with photo gallery. They see exactly what the technician saw. Approve or decline findings inline. No phone tag, no confusion.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Full DVI report with photo gallery</li>
+            <li>&bull; Customer approve/decline per finding</li>
+            <li>&bull; Builds trust through transparency</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">⚡</div>
+          <h3 class="text-lg font-semibold">DVI → Estimate in One Click</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Poor and critical findings convert directly into estimate line items. No re-typing. No missed upsells. The inspection drives the estimate — the way it should work.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; One-click "Generate Estimate from DVI"</li>
+            <li>&bull; Auto-populates from poor/critical findings</li>
+            <li>&bull; Agent tools: start_dvi, get_dvi, add_dvi_finding, complete_dvi</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CUSTOMER EXPERIENCE ===== -->
+  <section class="relative z-10 border-t border-gray-800/60 bg-gray-900/30">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold sm:text-4xl">Customer Experience</h2>
+        <p class="mt-3 text-lg text-gray-400 max-w-2xl">
+          Give your customers a modern, self-service experience. They can see their estimates, approve work, pay invoices, and book appointments — all without calling the shop.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🌐</div>
+          <h3 class="text-lg font-semibold">Customer Portal</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Magic link access — no passwords to remember. Customers view estimates with per-group approve/reject, see invoices and pay online with Stripe, review DVI inspections with photos, book appointments, chat with your shop's AI, and add vehicles. Everything self-service.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Magic link access (no password required)</li>
+            <li>&bull; View estimates, invoices, DVI inspections</li>
+            <li>&bull; Approve/reject repairs per group</li>
+            <li>&bull; Pay invoices online with Stripe</li>
+            <li>&bull; Book appointments (sees real shop availability)</li>
+            <li>&bull; Chat with shop's AI agent</li>
+            <li>&bull; Add vehicles</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">👤</div>
+          <h3 class="text-lg font-semibold">Customer Management</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Every customer's full history at a glance — vehicles, estimates, invoices, appointments, conversations. Search and filter. The AI remembers preferences, vehicle quirks, and past conversations for personalized service.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Full customer history: vehicles, estimates, invoices, appointments, conversations</li>
+            <li>&bull; Search and filter</li>
+            <li>&bull; AI customer memory for personalization</li>
+            <li>&bull; Multi-invoice payment modal</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🚗</div>
+          <h3 class="text-lg font-semibold">Vehicle Management</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Track every vehicle with full service history. Mileage tracking across visits. Search by customer, make, model, or plate. OCR registration scanning for instant VIN and plate entry.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Vehicle list with search/filter</li>
+            <li>&bull; Mileage tracking across service visits</li>
+            <li>&bull; OCR registration scanning — snap photo, auto-extract details</li>
+            <li>&bull; Add/edit vehicles</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHOP OPERATIONS ===== -->
+  <section class="relative z-10 border-t border-gray-800/60">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold sm:text-4xl">Shop Operations</h2>
+        <p class="mt-3 text-lg text-gray-400 max-w-2xl">
+          Everything your team needs day-to-day — scheduling, time tracking, service templates, and team management.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">📅</div>
+          <h3 class="text-lg font-semibold">Smart Scheduling</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Bay-aware appointment management. Google Calendar and CalDAV two-way sync keeps everything in sync. Customer self-booking via portal with real availability. Conflict detection built in.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Calendar page with list/detail/new views</li>
+            <li>&bull; Bay-aware scheduling</li>
+            <li>&bull; Google Calendar + CalDAV two-way sync</li>
+            <li>&bull; Customer self-booking via portal</li>
+            <li>&bull; Conflict detection</li>
+            <li>&bull; Status lifecycle: booked → confirmed → checked_in → completed / no_show / cancelled</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">⏱️</div>
+          <h3 class="text-lg font-semibold">Time Tracking</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Employee clock in/out at /time. Track time per job. Know who's on the clock and who's available. Job timers for accurate labor billing.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Employee clock in/out</li>
+            <li>&bull; Per-job time entries</li>
+            <li>&bull; Availability tracking</li>
+            <li>&bull; Agent tools: get_time_status, start_job_timer, stop_job_timer</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">📋</div>
+          <h3 class="text-lg font-semibold">Service Templates</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Pre-built service definitions with ballpark pricing. Standardize your common services — oil changes, brake jobs, timing belts — and build estimates in seconds. Shop-configurable via Settings → Services.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Pre-built service definitions</li>
+            <li>&bull; Ballpark pricing with optional part numbers</li>
+            <li>&bull; Used in estimates and appointment booking</li>
+            <li>&bull; Shop-configurable</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">👥</div>
+          <h3 class="text-lg font-semibold">Multi-User Teams</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Four roles — owner, manager, service writer, technician — with granular permissions. Employees can hold multiple roles. Role-based sidebar filtering so everyone sees what they need. Invite system with codes for easy onboarding.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; 4 roles: owner, manager, tech, service_writer</li>
+            <li>&bull; Multi-role employees</li>
+            <li>&bull; Granular permission system</li>
+            <li>&bull; Role-based sidebar filtering</li>
+            <li>&bull; Invite system with codes</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🔧</div>
+          <h3 class="text-lg font-semibold">Work Orders &amp; Jobs</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Work orders created from approved estimate groups. Job status lifecycle. DVI inspections attached to jobs. Technician assignment per job with per-group overrides. Job detail page with line items, timer, and DVI link.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; One-click "Create Job" from approved groups</li>
+            <li>&bull; Job status lifecycle</li>
+            <li>&bull; Technician assignment (one per job, per-group override)</li>
+            <li>&bull; DVI inspections attached to jobs</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🚪</div>
+          <h3 class="text-lg font-semibold">Onboarding Wizard</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Guided setup gets new shops running fast. Shop basics, business hours, labor rates, team members — all configured in a 5-step wizard. Up and running in under an hour.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; 5-step guided setup</li>
+            <li>&bull; Shop basics, hours, rates, team</li>
+            <li>&bull; Up and running in under an hour</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAYMENTS & BILLING ===== -->
+  <section class="relative z-10 border-t border-gray-800/60 bg-gray-900/30">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold sm:text-4xl">Payments &amp; Billing</h2>
+        <p class="mt-3 text-lg text-gray-400 max-w-2xl">
+          Get paid faster. Stripe Connect for online payments, manual payment recording for everything else, and QuickBooks sync so your accountant stays happy.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">💳</div>
+          <h3 class="text-lg font-semibold">Stripe Connect Payments</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Process credit card payments through Stripe Connect. Customers pay online via the portal with Stripe PaymentElement. Funds go directly to your connected account. PCI-compliant, secure, and seamless.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Stripe Connect integration</li>
+            <li>&bull; Customer self-pay via portal (PaymentElement)</li>
+            <li>&bull; PCI-compliant</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">💵</div>
+          <h3 class="text-lg font-semibold">Manual Payment Recording</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Record cash, check, Venmo, PayPal, Zelle, or any other payment method. Multi-invoice payment support — one payment can cover multiple invoices. Full payment history at /payments.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Cash, check, Venmo, PayPal, credit card, Zelle</li>
+            <li>&bull; Multi-invoice payment support</li>
+            <li>&bull; Payment history page</li>
+            <li>&bull; Customer credit and overpayment handling</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">📊</div>
+          <h3 class="text-lg font-semibold">QuickBooks Online Sync</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            One-click QuickBooks Online integration. Invoices, customers, and payments sync automatically from automotAI to QuickBooks. No double entry. No spreadsheets. Your accountant will love you.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; OAuth 2.0 connection (Settings → Integrations)</li>
+            <li>&bull; One-way sync: automotAI → QuickBooks</li>
+            <li>&bull; Invoices, customers, payments</li>
+            <li>&bull; Fire-and-forget with audit logging</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🏷️</div>
+          <h3 class="text-lg font-semibold">Subscription Plans</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Tiered plans to fit any shop: Basic ($49/mo), Pro ($69/mo), Enterprise ($119/mo). Metered usage billing with separate input/output token pricing. Transparent usage dashboard at /usage. No hidden fees.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Basic ($49/mo), Pro ($69/mo), Enterprise ($119/mo)</li>
+            <li>&bull; Metered usage billing</li>
+            <li>&bull; Usage tracking dashboard</li>
+            <li>&bull; Stripe Billing integration</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🔔</div>
+          <h3 class="text-lg font-semibold">Smart Service Intervals&trade;</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Set mileage and date-based service intervals per service type. The AI learns how your customers actually drive and predicts when they'll need their next service. Automatic email reminders bring them back — on time, every time.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Mileage-based and date-based intervals</li>
+            <li>&bull; Smart mileage projection engine</li>
+            <li>&bull; Per-customer opt-out toggle</li>
+            <li>&bull; Automatic email reminders via Resend</li>
+            <li>&bull; Dashboard widget + portal "Next Service Due" display</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">📈</div>
+          <h3 class="text-lg font-semibold">Reports &amp; Analytics</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Revenue, appointments, conversion rates — all with date range filtering. Every money metric shows both invoiced and collected. Outstanding balance at a glance. Know your numbers without opening a spreadsheet.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Revenue, appointments, conversion rates</li>
+            <li>&bull; Date range filtering (today, week, month, year, custom)</li>
+            <li>&bull; Invoiced vs collected on every metric</li>
+            <li>&bull; Technician revenue attribution</li>
+            <li>&bull; Dedicated /reports page</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLATFORM ===== -->
+  <section class="relative z-10 border-t border-gray-800/60">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold sm:text-4xl">Platform</h2>
+        <p class="mt-3 text-lg text-gray-400 max-w-2xl">
+          Built for reliability, security, and speed. Modern infrastructure that scales with your shop.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🔔</div>
+          <h3 class="text-lg font-semibold">Real-Time Notifications</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Notification bell with real-time updates via Supabase Realtime — no polling, no page refreshes. Portal event notifications: customer booked, approved estimate, added vehicle, reviewed DVI. Web push notifications (PWA).
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Supabase Realtime (no polling)</li>
+            <li>&bull; Portal event notifications</li>
+            <li>&bull; Platform-wide alerts from superadmin</li>
+            <li>&bull; Web push notifications (PWA)</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">📱</div>
+          <h3 class="text-lg font-semibold">Progressive Web App</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Install automotAI on any device — desktop, tablet, phone. Service worker for offline resilience. Full app experience without the app store. Works everywhere your team does.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Installable PWA</li>
+            <li>&bull; Service worker + manifest</li>
+            <li>&bull; Works on desktop, tablet, and mobile</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🔒</div>
+          <h3 class="text-lg font-semibold">Enterprise Security</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            CSP, HSTS, X-Frame-Options DENY. Row-Level Security on every database table. Rate limiting on auth endpoints. Audit logging. Portal JWT tokens with expiry. Your data is locked down.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; CSP, HSTS, X-Frame-Options DENY</li>
+            <li>&bull; Row-Level Security (RLS) on all tables</li>
+            <li>&bull; Rate limiting (fail-closed on auth endpoints)</li>
+            <li>&bull; Comprehensive audit logging</li>
+            <li>&bull; Portal JWT tokens with expiry</li>
+            <li>&bull; CSRF hardening</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🛡️</div>
+          <h3 class="text-lg font-semibold">Super Admin Panel</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Centralized control for platform operators. Model and provider management, pricing configuration, invite codes, platform-wide notifications, system settings. Everything in one place at /superadmin.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Model/provider management</li>
+            <li>&bull; Pricing config</li>
+            <li>&bull; Invite codes</li>
+            <li>&bull; Platform notifications</li>
+            <li>&bull; System settings</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🔄</div>
+          <h3 class="text-lg font-semibold">Real-Time Dashboard</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Revenue stats with date range filtering. Appointment counts. Recent activity feed. AI follow-up list. Everything updates in real time — no refresh button needed.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Revenue stats with date range</li>
+            <li>&bull; Appointment counts</li>
+            <li>&bull; Recent activity feed</li>
+            <li>&bull; Follow-up list</li>
+          </ul>
+        </div>
+
+        <div class="feature-card rounded-xl border border-gray-800 bg-gray-900/80 p-6">
+          <div class="text-2xl mb-3">🔧</div>
+          <h3 class="text-lg font-semibold">Parts Catalog</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Track parts with cost, markup percentage, and auto-calculated selling price. Per-shop parts markup settings. Keep your parts pricing consistent and profitable.
+          </p>
+          <ul class="mt-3 space-y-1 text-xs text-gray-500">
+            <li>&bull; Parts with cost + markup %</li>
+            <li>&bull; Auto-calculated selling price</li>
+            <li>&bull; Per-shop markup settings</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMING SOON ===== -->
+  <section class="relative z-10 border-t border-gray-800/60 bg-gray-900/30">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <div class="mb-12">
+        <div class="inline-block rounded-full border border-amber-400/20 bg-amber-400/5 px-4 py-1.5 text-sm text-amber-400 mb-4 font-medium">
+          On the Roadmap
+        </div>
+        <h2 class="text-3xl font-bold sm:text-4xl">Coming Soon</h2>
+        <p class="mt-3 text-lg text-gray-400 max-w-2xl">
+          We're building fast. Here's what's next.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div class="feature-card rounded-xl border border-amber-900/20 bg-amber-950/5 p-6">
+          <div class="text-2xl mb-3">📞</div>
+          <h3 class="text-lg font-semibold text-amber-400">AI Phone Receptionist</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            24/7 call answering powered by AI. Customers call your shop, the AI receptionist answers — schedules appointments, answers questions about their vehicle, and creates estimates from phone conversations. Never miss a call again.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-xl border border-amber-900/20 bg-amber-950/5 p-6">
+          <div class="text-2xl mb-3">🎙️</div>
+          <h3 class="text-lg font-semibold text-amber-400">Voice-to-Estimate</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Technicians narrate their findings and the AI builds the estimate in real time. No typing, no clicking — just talk through what the vehicle needs and automotAI builds the quote.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-xl border border-amber-900/20 bg-amber-950/5 p-6">
+          <div class="text-2xl mb-3">💬</div>
+          <h3 class="text-lg font-semibold text-amber-400">Two-Way SMS</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            SMS follow-ups for repair updates, estimate reminders, appointment confirmations, and post-service check-ins. Customers stay informed without you lifting a finger.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-xl border border-amber-900/20 bg-amber-950/5 p-6">
+          <div class="text-2xl mb-3">🏪</div>
+          <h3 class="text-lg font-semibold text-amber-400">Custom Shop Subdomains</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+            Each shop gets its own branded subdomain — shopname.automotai.com. White-label experience without the white-label complexity.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative z-10 border-t border-gray-800/60">
+    <div class="mx-auto max-w-3xl px-6 py-24 text-center">
+      <h2 class="text-3xl font-bold sm:text-4xl">Ready to see it in action?</h2>
+      <p class="mt-4 text-lg text-gray-400">
+        No credit card. No commitment. Full access to every feature for 14 days.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-4">
+        <a href="https://app.automotai.com/signup" class="rounded-lg bg-emerald-500 px-8 py-4 text-lg font-bold text-gray-950 hover:bg-emerald-400 transition-all hover:shadow-lg hover:shadow-emerald-500/20">
+          Start Free Trial &rarr;
+        </a>
+        <p class="text-sm text-gray-500">14-day full access. No credit card required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-gray-800/60">
+    <div class="mx-auto max-w-6xl px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <span class="text-sm text-gray-500">&copy; 2026 AutomotAI, an AutomotAI LLC product. All rights reserved.</span>
+      <div class="flex gap-6 text-sm text-gray-500">
+        <a href="/" class="hover:text-gray-300 transition-colors">Home</a>
+        <a href="/features.html" class="hover:text-gray-300 transition-colors">Features</a>
+        <a href="https://app.automotai.com" class="hover:text-gray-300 transition-colors">Dashboard</a>
+        <a href="https://app.automotai.com/terms" class="hover:text-gray-300 transition-colors">Terms</a>
+        <a href="https://app.automotai.com/privacy" class="hover:text-gray-300 transition-colors">Privacy</a>
+        <a href="mailto:hello@automotai.com" class="hover:text-gray-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
