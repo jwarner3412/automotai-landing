@@ -346,9 +346,9 @@
             <tr class="border-b border-gray-800/40">
               <td class="py-2.5 px-4">AI assistant</td>
               <td class="text-center py-2.5 px-4 text-xs text-gray-500">Opt-in, 0 tokens</td>
-              <td class="text-center py-2.5 px-4 text-emerald-400">5M / 1.5M tokens</td>
-              <td class="text-center py-2.5 px-4 text-emerald-400">10M / 3M tokens</td>
-              <td class="text-center py-2.5 px-4 text-gray-500">20M / 6M tokens</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">5M weighted</td>
+              <td class="text-center py-2.5 px-4 text-emerald-400">10M weighted</td>
+              <td class="text-center py-2.5 px-4 text-gray-500">20M weighted</td>
             </tr>
             <tr class="border-b border-gray-800/40">
               <td class="py-2.5 px-4">AI follow-up engine</td>
@@ -489,53 +489,43 @@
         <div class="rounded-xl border border-gray-800 bg-gray-900/80 p-6">
           <h3 class="text-lg font-semibold mb-4">🤖 AI Token Usage</h3>
           <p class="text-sm text-gray-400 leading-relaxed mb-4">
-            Every AI interaction uses tokens — input (what the system reads) and output (what it writes). Each plan includes a monthly token allowance. If you go over, you're billed at your plan's overage rate.
+            Every AI interaction uses tokens. We use <strong>weighted tokens</strong> — output costs 4x more than input, so we count it as: <code class="text-emerald-400">input + (output × 4)</code>. One number to track, one overage rate. Simple.
           </p>
           <div class="overflow-x-auto">
             <table class="w-full text-sm">
               <thead>
                 <tr class="border-b border-gray-800">
                   <th class="text-left py-2 text-gray-500 font-medium">Plan</th>
-                  <th class="text-right py-2 text-gray-500 font-medium">Included Input</th>
-                  <th class="text-right py-2 text-gray-500 font-medium">Included Output</th>
-                  <th class="text-right py-2 text-gray-500 font-medium">Overage Input</th>
-                  <th class="text-right py-2 text-gray-500 font-medium">Overage Output</th>
+                  <th class="text-right py-2 text-gray-500 font-medium">Included (weighted)</th>
+                  <th class="text-right py-2 text-gray-500 font-medium">Overage</th>
                 </tr>
               </thead>
               <tbody class="text-gray-400">
                 <tr class="border-b border-gray-800/40">
                   <td class="py-2">Free (opt-in)</td>
                   <td class="text-right py-2">0</td>
-                  <td class="text-right py-2">0</td>
                   <td class="text-right py-2">$1.20/M</td>
-                  <td class="text-right py-2">$4.80/M</td>
                 </tr>
                 <tr class="border-b border-gray-800/40">
                   <td class="py-2 text-emerald-400">Basic</td>
                   <td class="text-right py-2">5,000,000</td>
-                  <td class="text-right py-2">1,500,000</td>
                   <td class="text-right py-2">$1.05/M</td>
-                  <td class="text-right py-2">$4.20/M</td>
                 </tr>
                 <tr class="border-b border-gray-800/40">
                   <td class="py-2">Pro</td>
                   <td class="text-right py-2">10,000,000</td>
-                  <td class="text-right py-2">3,000,000</td>
                   <td class="text-right py-2">$0.75/M</td>
-                  <td class="text-right py-2">$3.00/M</td>
                 </tr>
                 <tr>
                   <td class="py-2 text-gray-500">Enterprise</td>
                   <td class="text-right py-2 text-gray-500">20,000,000</td>
-                  <td class="text-right py-2 text-gray-500">6,000,000</td>
                   <td class="text-right py-2 text-gray-500">$0.50/M</td>
-                  <td class="text-right py-2 text-gray-500">$2.00/M</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p class="text-xs text-gray-500 mt-4 leading-relaxed">
-            A typical shop using the AI daily burns about 2-3M input tokens per month. The included allowances cover normal use — overage only kicks in for heavy AI shops.
+            A typical shop using the AI daily burns about 2-3M weighted tokens per month. The included allowances cover normal use — overage only kicks in for heavy AI shops. Example: 3M input + 100K output = 3.4M weighted tokens. On Basic, that's under the 5M limit.
           </p>
         </div>
 
