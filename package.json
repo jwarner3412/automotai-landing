@@ -1,0 +1,23 @@
+{
+  "name": "automotai-landing",
+  "version": "1.0.0",
+  "description": "Standalone landing page for `automotai.com` — separate from the main app at `app.automotai.com`.",
+  "main": "server.js",
+  "scripts": {
+    "build": "npx tailwindcss -i input.css -o output.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwarner3412/automotai-landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwarner3412/automotai-landing/issues"
+  },
+  "homepage": "https://github.com/jwarner3412/automotai-landing#readme",
+  "dependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

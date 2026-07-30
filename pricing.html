@@ -20,39 +20,9 @@
   <meta name="twitter:title" content="Pricing — automotAI">
   <meta name="twitter:description" content="Simple, transparent pricing for auto repair shop management software. Start free, upgrade when you're ready.">
   <meta name="twitter:image" content="https://automotai.com/og-image.png">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/output.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    html { overflow-x: hidden; }
-    body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
-    .glow {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(52, 211, 153, 0.10) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 0;
-      max-width: 100vw;
-    }
-    .glow-top { top: -200px; left: 50%; transform: translateX(-50%); }
-    .glow-mid { top: 600px; right: -200px; }
-    @media (max-width: 640px) {
-      .glow-mid { right: -300px; }
-    }
-    .pricing-card {
-      transition: border-color 0.2s, background-color 0.2s;
-    }
-    .pricing-card:hover {
-      border-color: rgba(52, 211, 153, 0.3);
-      background-color: rgba(52, 211, 153, 0.03);
-    }
-    .pricing-card.featured {
-      border-color: rgba(52, 211, 153, 0.4);
-      background-color: rgba(52, 211, 153, 0.05);
-    }
-  </style>
 </head>
 <body class="min-h-screen bg-gray-950 text-white relative overflow-x-hidden">
 
